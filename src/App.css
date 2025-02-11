@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+div,
+nav,
+section {
+  border: 1px solid white;
+}
+body {
+  background: linear-gradient(to bottom, #02191d 0%, #02191d 85%, #07373f 100%);
+  height: 100vh;
+  width: 100%;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><rect width="50" height="50" fill="none" stroke="black" stroke-width="1" opacity="0.1"/></svg>');
+  pointer-events: none;
+  z-index: 9999;
+}
+header {
+  width: 80%;
+  height: 3.7rem;
+  border: 1px solid #24a0b5;
+  padding-inline: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding-block: 3px;
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+}
+nav {
+  width: 67%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigation {
+  height: 100%;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+  color: grey;
+  font-size: 21px;
+  font-weight: 400;
+}
+a:hover {
+  color: #24a0b5;
+}
+#cta {
+  height: 100%;
+  width: 20%;
+  border-radius: 15px;
+  font-weight: 400;
+}
+#event-form {
+  margin-top: 5rem;
+  /* display: none; */
+}
+.first-event-page {
+  margin-top: 6rem;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  padding-block: 1rem;
+}
+.create-event {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding-block: 3px;
+  padding-inline: 1rem;
+  font-size: 30px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.create-event:hover {
+  background-color: #24a0b5;
+}
+.first-event-page h2 {
+  color: #197686;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-left: 1rem;
+}
+#event-deets {
+  margin-top: 2rem;
+}
+.event-deets {
+  height: 3.5rem;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding-inline: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  color: white;
+  position: relative;
+  & strong {
+    color: #24a0b5;
+    margin-left: 1rem;
+  }
+}
+.register {
+  height: 80%;
+  width: 6rem;
+  border-radius: 10px;
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #24a0b5;
+  border: none;
+}
