@@ -35,6 +35,7 @@ const EventCreation = () => {
   };
   const newEvent = () => {
     setHasCreated(false);
+    // localStorage.clear();
   };
   return (
     <>
@@ -55,7 +56,8 @@ const EventCreation = () => {
                 className="event-deets"
               >
                 <strong>{event.name}</strong>
-                on {event.date}: {event.description}
+                <em>:</em>
+                <p>{event.description}</p> <p>({event.date})</p>
                 <button className="register">Register</button>
               </div>
             ))}
@@ -63,12 +65,13 @@ const EventCreation = () => {
         </div>
       ) : (
         <div id="event-form">
-          <h1>Upload Event</h1>
+          <h1>Add your Event</h1>
           <form
+            className=".popup"
             onSubmit={handleSubmit(onSubmit)}
             autoComplete="off"
           >
-            <div>
+            <div className="popup">
               <label htmlFor="event-name">Event Name:</label>
               <input
                 type="text"
@@ -77,7 +80,7 @@ const EventCreation = () => {
               />
               {errors.name && <span>{errors.name.message}</span>}
             </div>
-            <div>
+            <div className="popup">
               <label htmlFor="event-date">Event Date:</label>
               <input
                 type="date"
@@ -86,7 +89,7 @@ const EventCreation = () => {
               />
               {errors.date && <span>{errors.date.message}</span>}
             </div>
-            <div>
+            <div className="popup">
               <label htmlFor="event-description">Event Description:</label>
               <textarea
                 id="event-description"
@@ -96,7 +99,12 @@ const EventCreation = () => {
               />
               {errors.description && <span>{errors.description.message}</span>}
             </div>
-            <button type="submit">Upload Event</button>
+            <button
+              id="submit-event"
+              type="submit"
+            >
+              Upload Event
+            </button>
           </form>
           {message && <p>{message}</p>}
         </div>
