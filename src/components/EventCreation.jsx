@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { TicketSelection } from "./TicketSelection";
+import { useEvent } from "./EventContext";
+import { useState } from "react";
 const EventCreation = () => {
   const {
     register,
@@ -7,36 +9,21 @@ const EventCreation = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const [events, setEvents] = useState([]);
-  const [message, setMessage] = useState("");
+
+  const { events, addEvent, message, clearMessage } = useEvent(); // Get context values
   const [hasCreated, setHasCreated] = useState(true);
 
-  useEffect(() => {
-    // Load events from local storage when the component mounts
-    const storedEvents = JSON.parse(localStorage.getItem("events")) || [];
-    setEvents(storedEvents);
-  }, []);
-
-  // onSubmit function that gets called when form is submitted successfully
   const onSubmit = (data) => {
-    // Add the new event to the current events state
-    const updatedEvents = [...events, data];
-
-    // Save events to local storage
-    localStorage.setItem("events", JSON.stringify(updatedEvents));
-
-    // Update state and set a success message
-    setEvents(updatedEvents);
-    setMessage("Event uploaded successfully!");
-
-    // Reset the form fields after submission
+    addEvent(data); // Use addEvent from context
     reset();
     setHasCreated(true);
   };
+
   const newEvent = () => {
     setHasCreated(false);
-    // localStorage.clear();
+    clearMessage(); // Optionally clear the message
   };
+
   return (
     <>
       {hasCreated ? (
@@ -44,7 +31,7 @@ const EventCreation = () => {
           <button
             onClick={newEvent}
             className="create-event"
-            title="add event"
+            title="Add event"
           >
             +
           </button>
@@ -57,8 +44,10 @@ const EventCreation = () => {
               >
                 <strong>{event.name}</strong>
                 <em>:</em>
-                <p>{event.description}</p> <p>({event.date})</p>
+                <p>{event.description}</p>
+                <p>({event.date})</p>
                 <button className="register">Register</button>
+                <TicketSelection />
               </div>
             ))}
           </section>

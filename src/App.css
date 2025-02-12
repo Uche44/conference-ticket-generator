@@ -145,13 +145,13 @@ a:hover {
   transform: translate(-50%);
 }
 .popup {
-  background-color: white; /* Popup background */
+  background-color: white; 
   padding-inline: 20px;
   padding-block: 5px;
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  border-radius: 5px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
   margin-bottom: 1rem;
-  width: 100%; /* Allow the popup to be responsive */
+  width: 100%; 
   & label {
     font-size: 1.1rem;
     font-weight: 500;
@@ -165,7 +165,7 @@ h1 {
   color: #24a0b5;
 }
 
-/* Add spacing for form inputs */
+
 input {
   width: 100%;
   margin: 10px 0;
@@ -185,7 +185,7 @@ textarea {
   font-weight: 500;
 }
 span {
-  color: red; /* Error messages in red */
+  color: red; 
   font-size: 0.9em;
 }
 #submit-event {
