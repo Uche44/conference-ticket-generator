@@ -24,8 +24,7 @@ const EventCreation = () => {
 
   const newEvent = () => {
     setHasCreated(false);
-    localStorage.clear();
-    clearMessage(); // Optionally clear the message
+    clearMessage(); // Optionatlly clear the message
   };
 
   const handleRegister = (event) => {
