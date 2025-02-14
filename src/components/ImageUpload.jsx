@@ -9,7 +9,7 @@ export const ImageUpload = () => {
     script.src = "https://upload-widget.cloudinary.com/global/all.js";
     script.async = true;
     document.body.appendChild(script);
-    
+
     return () => {
       document.body.removeChild(script);
     };
@@ -19,10 +19,10 @@ export const ImageUpload = () => {
     if (window.cloudinary) {
       const widget = window.cloudinary.createUploadWidget(
         {
-          cloudName: "dcw1m1rak", 
-          uploadPreset: "ml_default", 
-          multiple: false, 
-          folder: "my_uploads", 
+          cloudName: "dcw1m1rak",
+          uploadPreset: "ml_default",
+          multiple: false,
+          folder: "my_uploads",
         },
         (error, result) => {
           if (!error && result.event === "success") {
@@ -40,20 +40,23 @@ export const ImageUpload = () => {
 
   return (
     <>
-      <button onClick={openWidget} className="img-upload">
+      <button
+        onClick={openWidget}
+        className="img-upload"
+      >
         Upload Image
       </button>
 
       {uploadedImageUrl && (
-        <div className="mt-4">
+        <div className="img">
           <p>Uploaded Image:</p>
-          <img src={uploadedImageUrl} alt="Uploaded" className="" />
+          <img
+            src={uploadedImageUrl}
+            alt="Uploaded"
+            className="img"
+          />
         </div>
       )}
     </>
   );
 };
-
-
-
-
