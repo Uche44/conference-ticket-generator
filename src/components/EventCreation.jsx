@@ -47,22 +47,6 @@ const EventCreation = () => {
                 +
               </button>
               <h2>Available Events</h2>
-              [media pointer="file-service://file-4fP4mqAK5kW1pF6qmGbsZE"]
-              [media pointer="file-service://file-CrNTWEn8WUu1nPRdeLkwPh"] I
-              want to build a ticketing system that generates tickets for
-              conferences. This is the UI Help me with the jsx and some dummy
-              functions that simulates the user registers for the event, the
-              user comes to the event page, selects the ticket they want to buy,
-              simulate the 'payment', then they are directed to a page where
-              they get to fill a form, they upload their picture to cloudinary,
-              name, and email. then simlate the 'generating ticket' function and
-              then navigates them to the generated ticket page, where their
-              details are displayed with the image returned from cloudinary.
-              Follow the UI i provided. Ask clarifying qestions to help you
-              understand the task. Use reactjs with tailwindcss for styling,
-              also use clippath css property for the slant edges and some
-              libraries for the barcode wait for me to upload the last image
-              before commencing
               <section id="event-deets">
                 {events.map((event, index) => (
                   <div
